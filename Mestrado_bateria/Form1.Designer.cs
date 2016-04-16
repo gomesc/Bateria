@@ -50,6 +50,7 @@
             this.bt_cadastro = new System.Windows.Forms.Button();
             this.bt_view = new System.Windows.Forms.Button();
             this.bt_ensaio = new System.Windows.Forms.Button();
+            this.p_cadastro = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
             this.gb_con_ser.SuspendLayout();
             this.gB_battery.SuspendLayout();
@@ -62,7 +63,7 @@
             this.status_label});
             this.statusStrip1.Location = new System.Drawing.Point(0, 322);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(594, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(595, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -214,6 +215,7 @@
             this.bt_cadastro.TabIndex = 3;
             this.bt_cadastro.Text = "Cadastro";
             this.bt_cadastro.UseVisualStyleBackColor = true;
+            this.bt_cadastro.Click += new System.EventHandler(this.bt_cadastro_Click);
             // 
             // bt_view
             // 
@@ -233,11 +235,19 @@
             this.bt_ensaio.Text = "Ensaio";
             this.bt_ensaio.UseVisualStyleBackColor = true;
             // 
+            // p_cadastro
+            // 
+            this.p_cadastro.Location = new System.Drawing.Point(0, 6);
+            this.p_cadastro.Name = "p_cadastro";
+            this.p_cadastro.Size = new System.Drawing.Size(592, 313);
+            this.p_cadastro.TabIndex = 6;
+            // 
             // f_moura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 344);
+            this.ClientSize = new System.Drawing.Size(595, 344);
+            this.Controls.Add(this.p_cadastro);
             this.Controls.Add(this.bt_ensaio);
             this.Controls.Add(this.bt_view);
             this.Controls.Add(this.bt_cadastro);
@@ -280,6 +290,7 @@
         private System.Windows.Forms.Button bt_cadastro;
         private System.Windows.Forms.Button bt_view;
         private System.Windows.Forms.Button bt_ensaio;
+        private System.Windows.Forms.Panel p_cadastro;
     }
 }
 

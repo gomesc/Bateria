@@ -30,7 +30,7 @@ namespace Moura
             InitializeComponent();
             portas_disponiveis();
             serial = new SerialPort();
-            permissoes(false, false, false, true,false,false,false,true,true,false);
+            permissoes_p(false, false, false, true,false,false,false,true,true,false,false);
         }
 
         private void portas_disponiveis()
@@ -48,14 +48,14 @@ namespace Moura
                 } //foreach
 
                 define_status(false);
-                permissoes(true,true,false,true,false,false,false,true,true,false);
+                permissoes_p(true,true,false,true,false,false,false,true,true,false,false);
 
             } // if portas
 
             else
             {
                 define_status(false);
-                permissoes(false, false, false, true,false,false,false,true,true,false);
+                permissoes_p(false, false, false, true,false,false,false,true,true,false,false);
             } //else
             
         } //função
@@ -74,9 +74,9 @@ namespace Moura
             }
         }
 
-        private void permissoes(bool port, bool connect, bool desconnect,
+        private void permissoes_p(bool port, bool connect, bool desconnect,
             bool verificar, bool tensao, bool corrente, bool temp_bateria, bool cad,
-            bool view, bool ens)
+            bool view, bool ens, bool painel_cadastro)
         {
             cB_port.Enabled = port;
             bt_connect.Enabled = connect;
@@ -88,6 +88,9 @@ namespace Moura
             tB_ten.Enabled = tensao;
             tB_current.Enabled = corrente;
             tB_temp_bat.Enabled = temp_bateria;
+
+            p_cadastro.Visible = painel_cadastro;
+
         }
 
         private void bt_verify_Click(object sender, EventArgs e)
@@ -110,7 +113,7 @@ namespace Moura
             if (!serial.IsOpen)
             {
                 serial.Open();
-                permissoes(false, false, true, false,true,true,true,true,true,true);
+                permissoes_p(false, false, true, false,true,true,true,true,true,true,false);
                 define_status(true);
             }
         }
@@ -140,6 +143,11 @@ namespace Moura
             tB_ten.Text = voltage.Trim();
             tB_current.Text = current.Trim();
             tB_temp_bat.Text = temp_battery.Trim();
+        }
+
+        private void bt_cadastro_Click(object sender, EventArgs e)
+        {
+            permissoes_p(false,false,false,false,false,false,false,false,false,false,true);
         }
 
     }
