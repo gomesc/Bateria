@@ -1,0 +1,7 @@
+C:\Users\User\AppData\Local\Temporary Projects\Moura\bin\Debug\Moura.exe
+C:\Users\User\AppData\Local\Temporary Projects\Moura\bin\Debug\Moura.pdb
+C:\Users\User\AppData\Local\Temporary Projects\Moura\obj\x86\Debug\Moura.f_moura.resources
+C:\Users\User\AppData\Local\Temporary Projects\Moura\obj\x86\Debug\Moura.Properties.Resources.resources
+C:\Users\User\AppData\Local\Temporary Projects\Moura\obj\x86\Debug\Moura.csproj.GenerateResource.Cache
+C:\Users\User\AppData\Local\Temporary Projects\Moura\obj\x86\Debug\Moura.exe
+C:\Users\User\AppData\Local\Temporary Projects\Moura\obj\x86\Debug\Moura.pdb
