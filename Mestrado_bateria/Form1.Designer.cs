@@ -224,6 +224,7 @@
             this.bt_view.TabIndex = 4;
             this.bt_view.Text = "Dados Salvos";
             this.bt_view.UseVisualStyleBackColor = true;
+            this.bt_view.Click += new System.EventHandler(this.bt_view_Click);
             // 
             // bt_ensaio
             // 
@@ -233,6 +234,7 @@
             this.bt_ensaio.TabIndex = 5;
             this.bt_ensaio.Text = "Ensaio";
             this.bt_ensaio.UseVisualStyleBackColor = true;
+            this.bt_ensaio.Click += new System.EventHandler(this.bt_ensaio_Click);
             // 
             // f_moura
             // 

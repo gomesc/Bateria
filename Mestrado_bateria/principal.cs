@@ -153,5 +153,17 @@ namespace Moura
 
         }
 
+        private void bt_view_Click(object sender, EventArgs e)
+        {
+            f_salvos salvo = new f_salvos();
+            salvo.Show();
+        }
+
+        private void bt_ensaio_Click(object sender, EventArgs e)
+        {
+            f_ensaio ensaio_f = new f_ensaio();
+            ensaio_f.Show();
+        }
+
     }
 }
