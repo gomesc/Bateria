@@ -50,7 +50,6 @@
             this.bt_cadastro = new System.Windows.Forms.Button();
             this.bt_view = new System.Windows.Forms.Button();
             this.bt_ensaio = new System.Windows.Forms.Button();
-            this.p_cadastro = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
             this.gb_con_ser.SuspendLayout();
             this.gB_battery.SuspendLayout();
@@ -235,19 +234,11 @@
             this.bt_ensaio.Text = "Ensaio";
             this.bt_ensaio.UseVisualStyleBackColor = true;
             // 
-            // p_cadastro
-            // 
-            this.p_cadastro.Location = new System.Drawing.Point(0, 6);
-            this.p_cadastro.Name = "p_cadastro";
-            this.p_cadastro.Size = new System.Drawing.Size(592, 313);
-            this.p_cadastro.TabIndex = 6;
-            // 
             // f_moura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 344);
-            this.Controls.Add(this.p_cadastro);
             this.Controls.Add(this.bt_ensaio);
             this.Controls.Add(this.bt_view);
             this.Controls.Add(this.bt_cadastro);
@@ -256,7 +247,8 @@
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f_moura";
-            this.Text = "Moura";
+            this.Text = "Carga/Descarga Bateria";
+            this.Load += new System.EventHandler(this.f_moura_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.gb_con_ser.ResumeLayout(false);
@@ -290,7 +282,6 @@
         private System.Windows.Forms.Button bt_cadastro;
         private System.Windows.Forms.Button bt_view;
         private System.Windows.Forms.Button bt_ensaio;
-        private System.Windows.Forms.Panel p_cadastro;
     }
 }
 

@@ -28,9 +28,9 @@ namespace Moura
         public f_moura()
         {
             InitializeComponent();
-            portas_disponiveis();
+            define_status(false);
             serial = new SerialPort();
-            permissoes_p(false, false, false, true,false,false,false,true,true,false,false);
+            permissoes_p(false, false, false, true,false,false,false,true,true,false);
         }
 
         private void portas_disponiveis()
@@ -48,14 +48,13 @@ namespace Moura
                 } //foreach
 
                 define_status(false);
-                permissoes_p(true,true,false,true,false,false,false,true,true,false,false);
-
+                permissoes_p(true,true,false,true,false,false,false,true,true,false);
             } // if portas
 
             else
             {
                 define_status(false);
-                permissoes_p(false, false, false, true,false,false,false,true,true,false,false);
+                permissoes_p(false, false, false, true,false,false,false,true,true,false);
             } //else
             
         } //função
@@ -76,7 +75,7 @@ namespace Moura
 
         private void permissoes_p(bool port, bool connect, bool desconnect,
             bool verificar, bool tensao, bool corrente, bool temp_bateria, bool cad,
-            bool view, bool ens, bool painel_cadastro)
+            bool view, bool ens)
         {
             cB_port.Enabled = port;
             bt_connect.Enabled = connect;
@@ -88,9 +87,6 @@ namespace Moura
             tB_ten.Enabled = tensao;
             tB_current.Enabled = corrente;
             tB_temp_bat.Enabled = temp_bateria;
-
-            p_cadastro.Visible = painel_cadastro;
-
         }
 
         private void bt_verify_Click(object sender, EventArgs e)
@@ -113,7 +109,7 @@ namespace Moura
             if (!serial.IsOpen)
             {
                 serial.Open();
-                permissoes_p(false, false, true, false,true,true,true,true,true,true,false);
+                permissoes_p(false, false, true, false,true,true,true,true,true,true);
                 define_status(true);
             }
         }
@@ -125,8 +121,8 @@ namespace Moura
                 serial.Close();
                 serial = null;
                 define_status(false);
-                portas_disponiveis();
             }
+            portas_disponiveis();
         }
 
         private void serialport_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -147,7 +143,14 @@ namespace Moura
 
         private void bt_cadastro_Click(object sender, EventArgs e)
         {
-            permissoes_p(false,false,false,false,false,false,false,false,false,false,true);
+            f_cadastro cadastro = new f_cadastro(this);
+            cadastro.Show();
+            //permissoes_p(false,false,false,false,false,false,false,false,false,false,true);
+        }
+
+        private void f_moura_Load(object sender, EventArgs e)
+        {
+
         }
 
     }
