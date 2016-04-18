@@ -5,3 +5,7 @@ C:\Users\User\Documents\GitHub\Mestrado_bateria\Mestrado_bateria\bin\Debug\Mestr
 C:\Users\User\Documents\GitHub\Mestrado_bateria\Mestrado_bateria\bin\Debug\Mestrado_bateria.pdb
 C:\Users\User\Documents\GitHub\Mestrado_bateria\Mestrado_bateria\obj\x86\Debug\Mestrado_bateria.exe
 C:\Users\User\Documents\GitHub\Mestrado_bateria\Mestrado_bateria\obj\x86\Debug\Mestrado_bateria.pdb
+C:\Users\User\Documents\GitHub\Mestrado_bateria\Mestrado_bateria\obj\x86\Debug\Mestrado_bateria.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\Mestrado_bateria\Mestrado_bateria\obj\x86\Debug\Moura.f_cadastro.resources
+C:\Users\User\Documents\GitHub\Mestrado_bateria\Mestrado_bateria\obj\x86\Debug\Moura.f_salvos.resources
+C:\Users\User\Documents\GitHub\Mestrado_bateria\Mestrado_bateria\obj\x86\Debug\Moura.f_ensaio.resources

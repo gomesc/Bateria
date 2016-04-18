@@ -28,9 +28,9 @@ namespace Moura
         public f_moura()
         {
             InitializeComponent();
-            portas_disponiveis();
+            define_status(false);
             serial = new SerialPort();
-            permissoes(false, false, false, true,false,false,false,true,true,false);
+            permissoes_p(false, false, false, true,false,false,false,true,true,false);
         }
 
         private void portas_disponiveis()
@@ -48,14 +48,13 @@ namespace Moura
                 } //foreach
 
                 define_status(false);
-                permissoes(true,true,false,true,false,false,false,true,true,false);
-
+                permissoes_p(true,true,false,true,false,false,false,true,true,false);
             } // if portas
 
             else
             {
                 define_status(false);
-                permissoes(false, false, false, true,false,false,false,true,true,false);
+                permissoes_p(false, false, false, true,false,false,false,true,true,false);
             } //else
             
         } //função
@@ -74,7 +73,7 @@ namespace Moura
             }
         }
 
-        private void permissoes(bool port, bool connect, bool desconnect,
+        private void permissoes_p(bool port, bool connect, bool desconnect,
             bool verificar, bool tensao, bool corrente, bool temp_bateria, bool cad,
             bool view, bool ens)
         {
@@ -110,7 +109,7 @@ namespace Moura
             if (!serial.IsOpen)
             {
                 serial.Open();
-                permissoes(false, false, true, false,true,true,true,true,true,true);
+                permissoes_p(false, false, true, false,true,true,true,true,true,true);
                 define_status(true);
             }
         }
@@ -122,8 +121,8 @@ namespace Moura
                 serial.Close();
                 serial = null;
                 define_status(false);
-                portas_disponiveis();
             }
+            portas_disponiveis();
         }
 
         private void serialport_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -140,6 +139,30 @@ namespace Moura
             tB_ten.Text = voltage.Trim();
             tB_current.Text = current.Trim();
             tB_temp_bat.Text = temp_battery.Trim();
+        }
+
+        private void bt_cadastro_Click(object sender, EventArgs e)
+        {
+            f_cadastro cadastro = new f_cadastro(this);
+            cadastro.Show();
+            //permissoes_p(false,false,false,false,false,false,false,false,false,false,true);
+        }
+
+        private void f_moura_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_view_Click(object sender, EventArgs e)
+        {
+            f_salvos salvo = new f_salvos();
+            salvo.Show();
+        }
+
+        private void bt_ensaio_Click(object sender, EventArgs e)
+        {
+            f_ensaio ensaio_f = new f_ensaio();
+            ensaio_f.Show();
         }
 
     }
