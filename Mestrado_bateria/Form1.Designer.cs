@@ -250,6 +250,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f_moura";
             this.Text = "Carga/Descarga Bateria";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.f_moura_FormClosed);
             this.Load += new System.EventHandler(this.f_moura_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
