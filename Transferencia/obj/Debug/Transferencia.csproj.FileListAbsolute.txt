@@ -1,0 +1,4 @@
+C:\Users\User\Documents\GitHub\Mestrado_bateria\Transferencia\bin\Debug\Transferencia.dll
+C:\Users\User\Documents\GitHub\Mestrado_bateria\Transferencia\bin\Debug\Transferencia.pdb
+C:\Users\User\Documents\GitHub\Mestrado_bateria\Transferencia\obj\Debug\Transferencia.dll
+C:\Users\User\Documents\GitHub\Mestrado_bateria\Transferencia\obj\Debug\Transferencia.pdb

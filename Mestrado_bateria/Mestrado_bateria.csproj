@@ -109,6 +109,20 @@
   <ItemGroup>
     <Content Include="baterias-moura-logo.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcessoBD\AcessoBD.csproj">
+      <Project>{4341633B-6D88-4693-9D85-DF9E0178D41C}</Project>
+      <Name>AcessoBD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tabelas\Tabelas.csproj">
+      <Project>{E44AB9FB-0911-4A74-A37A-7AC45022B19D}</Project>
+      <Name>Tabelas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Transferencia\Transferencia.csproj">
+      <Project>{F9FFB140-2FEE-4039-A683-D2874BA0032E}</Project>
+      <Name>Transferencia</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

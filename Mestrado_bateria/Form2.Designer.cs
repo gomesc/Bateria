@@ -92,7 +92,6 @@
             this.p_ensa = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
-            this.tB_etap_ensa = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.tB_tstart_ensa = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -126,6 +125,7 @@
             this.tB_tipo_etap = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.tB_net_etap = new System.Windows.Forms.TextBox();
+            this.cB_etapas_ensa = new System.Windows.Forms.ComboBox();
             this.p_modelo.SuspendLayout();
             this.p_bat.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -373,6 +373,7 @@
             // p_bat
             // 
             this.p_bat.Controls.Add(this.panel2);
+            this.p_bat.Controls.Add(this.p_ensa);
             this.p_bat.Controls.Add(this.cB_modelo_bat);
             this.p_bat.Controls.Add(this.panel3);
             this.p_bat.Controls.Add(this.label10);
@@ -677,9 +678,9 @@
             // p_ensa
             // 
             this.p_ensa.Controls.Add(this.p_etapa);
+            this.p_ensa.Controls.Add(this.cB_etapas_ensa);
             this.p_ensa.Controls.Add(this.panel6);
             this.p_ensa.Controls.Add(this.label26);
-            this.p_ensa.Controls.Add(this.tB_etap_ensa);
             this.p_ensa.Controls.Add(this.label27);
             this.p_ensa.Controls.Add(this.tB_tstart_ensa);
             this.p_ensa.Controls.Add(this.label28);
@@ -697,7 +698,7 @@
             this.p_ensa.Controls.Add(this.label34);
             this.p_ensa.Controls.Add(this.tB_ib_ensa);
             this.p_ensa.Controls.Add(this.label35);
-            this.p_ensa.Location = new System.Drawing.Point(1, 1);
+            this.p_ensa.Location = new System.Drawing.Point(0, 0);
             this.p_ensa.Name = "p_ensa";
             this.p_ensa.Size = new System.Drawing.Size(222, 302);
             this.p_ensa.TabIndex = 21;
@@ -717,13 +718,6 @@
             this.label26.Size = new System.Drawing.Size(39, 13);
             this.label26.TabIndex = 18;
             this.label26.Text = "Ensaio";
-            // 
-            // tB_etap_ensa
-            // 
-            this.tB_etap_ensa.Location = new System.Drawing.Point(55, 243);
-            this.tB_etap_ensa.Name = "tB_etap_ensa";
-            this.tB_etap_ensa.Size = new System.Drawing.Size(150, 20);
-            this.tB_etap_ensa.TabIndex = 17;
             // 
             // label27
             // 
@@ -1005,12 +999,19 @@
             this.tB_net_etap.Size = new System.Drawing.Size(150, 20);
             this.tB_net_etap.TabIndex = 14;
             // 
+            // cB_etapas_ensa
+            // 
+            this.cB_etapas_ensa.FormattingEnabled = true;
+            this.cB_etapas_ensa.Location = new System.Drawing.Point(55, 243);
+            this.cB_etapas_ensa.Name = "cB_etapas_ensa";
+            this.cB_etapas_ensa.Size = new System.Drawing.Size(150, 21);
+            this.cB_etapas_ensa.TabIndex = 21;
+            // 
             // f_cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 344);
-            this.Controls.Add(this.p_ensa);
+            this.ClientSize = new System.Drawing.Size(221, 344);
             this.Controls.Add(this.p_bat);
             this.Controls.Add(this.p_modelo);
             this.Controls.Add(this.bt_etap);
@@ -1100,7 +1101,6 @@
         private System.Windows.Forms.Panel p_ensa;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox tB_etap_ensa;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox tB_tstart_ensa;
         private System.Windows.Forms.Label label28;
@@ -1134,5 +1134,6 @@
         private System.Windows.Forms.TextBox tB_tipo_etap;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox tB_net_etap;
+        private System.Windows.Forms.ComboBox cB_etapas_ensa;
     }
 }
