@@ -10,27 +10,25 @@ using System.IO;
 using System.IO.Ports;
 using System.Threading;
 
+
 namespace Moura
 {
     public partial class f_moura : Form
     {
         SerialPort serial;
         string[] portas;
-
+        int time = 500;
+ 
         string text_input;
-
-        string voltage;
-        string current;
-        string temp_battery;
 
         private delegate void SetTextDeleg(string text);
 
         public f_moura()
         {
             InitializeComponent();
-            portas_disponiveis();
+            define_status(false);
             serial = new SerialPort();
-            permissoes(false, false, false, true,false,false,false,true,true,false);
+            permissoes_p(false, false, false, true,false,false,false,true,true,false);
         }
 
         private void portas_disponiveis()
@@ -48,14 +46,13 @@ namespace Moura
                 } //foreach
 
                 define_status(false);
-                permissoes(true,true,false,true,false,false,false,true,true,false);
-
+                permissoes_p(true,true,false,true,false,false,false,true,true,false);
             } // if portas
 
             else
             {
                 define_status(false);
-                permissoes(false, false, false, true,false,false,false,true,true,false);
+                permissoes_p(false, false, false, true,false,false,false,true,true,false);
             } //else
             
         } //função
@@ -74,7 +71,7 @@ namespace Moura
             }
         }
 
-        private void permissoes(bool port, bool connect, bool desconnect,
+        private void permissoes_p(bool port, bool connect, bool desconnect,
             bool verificar, bool tensao, bool corrente, bool temp_bateria, bool cad,
             bool view, bool ens)
         {
@@ -95,6 +92,7 @@ namespace Moura
             portas_disponiveis();
         }
 
+        #region Conectar Botão
         private void bt_connect_Click(object sender, EventArgs e)
         {
             if (cB_port.SelectedIndex != -1)
@@ -110,10 +108,11 @@ namespace Moura
             if (!serial.IsOpen)
             {
                 serial.Open();
-                permissoes(false, false, true, false,true,true,true,true,true,true);
+                permissoes_p(false, false, true, false,true,true,true,true,true,true);
                 define_status(true);
             }
         }
+        #endregion
 
         private void bt_desconnect_Click(object sender, EventArgs e)
         {
@@ -122,25 +121,94 @@ namespace Moura
                 serial.Close();
                 serial = null;
                 define_status(false);
-                portas_disponiveis();
             }
+            portas_disponiveis();
         }
 
         private void serialport_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            Thread.Sleep(500);
-            text_input = serial.ReadLine();
-            this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] {text_input});
+            byte[] data_input = new byte[10];
+
+            serial.Read(data_input, 0, 10);
+            Thread.Sleep(time);
+
+            if (data_input[0] == 0x55)
+            {
+                //checksum
+                byte soma = Convert.ToByte((data_input[0] + data_input[1] + data_input[2] + data_input[3] + data_input[4] + data_input[5] + data_input[6] + data_input[7] + data_input[8]) & 0xFF);
+                byte cs = Convert.ToByte((soma + data_input[9]) & 0xFF);
+
+                if (cs == 0)
+                {
+                    foreach (byte data in data_input)
+                    {
+                        text_input += string.Format("{0:X2}",data);
+                    }
+
+                    int i_bat = Convert.ToInt32(text_input.Substring(2, 4), 16);
+                    int v_bat = Convert.ToInt32(text_input.Substring(6, 4), 16);
+                    int t_bat = Convert.ToInt32(text_input.Substring(10, 4), 16);
+                    int t_amb = Convert.ToInt32(text_input.Substring(14, 4), 16);
+
+                    decimal voltage = v_bat / 1240.9090M;
+                    decimal current = i_bat * 0.0093M - 19.5126M;
+                    decimal temp_bat = (t_bat / 1240.9090M)*100;
+                    decimal temp_amb = (t_amb / 1240.9090M)*100;
+
+                    tB_ten.Text = voltage.ToString("N3");
+                    tB_current.Text = current.ToString("N3");
+                    tB_current.Text = temp_bat.ToString("N2");
+
+                }
+            }
+        //    text_input = serial.ReadLine();
+        //    this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] {text_input});
         }
 
         //Tratar os dados de entrada
-        private void si_DataReceived(string text_input)
+ /*       private void si_DataReceived(string text_input)
         {
-            //Implementar!!!
+            
             tB_ten.Text = voltage.Trim();
             tB_current.Text = current.Trim();
             tB_temp_bat.Text = temp_battery.Trim();
+        } */
+
+        private void bt_cadastro_Click(object sender, EventArgs e)
+        {
+            f_cadastro cadastro = new f_cadastro();
+            cadastro.Show();
+            //permissoes_p(false,false,false,false,false,false,false,false,false,false,true);
         }
+
+        private void f_moura_Load(object sender, EventArgs e)
+        {
+            serial.ReadTimeout = time;
+            serial.WriteTimeout = time;
+        }
+
+        private void bt_view_Click(object sender, EventArgs e)
+        {
+            f_salvos salvo = new f_salvos();
+            salvo.Show();
+        }
+
+        private void bt_ensaio_Click(object sender, EventArgs e)
+        {
+            f_ensaio ensaio_f = new f_ensaio();
+            ensaio_f.Show();
+        }
+
+        private void f_moura_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (serial != null && serial.IsOpen)
+            {
+                serial.Close();
+                serial = null;
+                define_status(false);
+                portas_disponiveis();
+            }
+        } //f_moura_FormClosed
 
     }
 }

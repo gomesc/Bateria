@@ -62,7 +62,7 @@
             this.status_label});
             this.statusStrip1.Location = new System.Drawing.Point(0, 322);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(594, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(595, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -214,6 +214,7 @@
             this.bt_cadastro.TabIndex = 3;
             this.bt_cadastro.Text = "Cadastro";
             this.bt_cadastro.UseVisualStyleBackColor = true;
+            this.bt_cadastro.Click += new System.EventHandler(this.bt_cadastro_Click);
             // 
             // bt_view
             // 
@@ -223,6 +224,7 @@
             this.bt_view.TabIndex = 4;
             this.bt_view.Text = "Dados Salvos";
             this.bt_view.UseVisualStyleBackColor = true;
+            this.bt_view.Click += new System.EventHandler(this.bt_view_Click);
             // 
             // bt_ensaio
             // 
@@ -232,12 +234,13 @@
             this.bt_ensaio.TabIndex = 5;
             this.bt_ensaio.Text = "Ensaio";
             this.bt_ensaio.UseVisualStyleBackColor = true;
+            this.bt_ensaio.Click += new System.EventHandler(this.bt_ensaio_Click);
             // 
             // f_moura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 344);
+            this.ClientSize = new System.Drawing.Size(595, 344);
             this.Controls.Add(this.bt_ensaio);
             this.Controls.Add(this.bt_view);
             this.Controls.Add(this.bt_cadastro);
@@ -246,7 +249,9 @@
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "f_moura";
-            this.Text = "Moura";
+            this.Text = "Carga/Descarga Bateria";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.f_moura_FormClosed);
+            this.Load += new System.EventHandler(this.f_moura_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.gb_con_ser.ResumeLayout(false);
