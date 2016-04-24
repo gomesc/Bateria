@@ -15,5 +15,25 @@ namespace Moura
         {
             InitializeComponent();
         }
+
+        private void bt_c10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_c20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_c100_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
