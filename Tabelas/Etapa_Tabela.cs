@@ -17,6 +17,7 @@ namespace Tabelas
         acesso_sql acesso_dados = new acesso_sql();
         #endregion
 
+
         public string InserirEtapa(Etapa etapa)
         {
             try
@@ -108,9 +109,9 @@ namespace Tabelas
             }
         }
 
-        public Etapa ConsultarEtapas(string p)
-        {
-            throw new NotImplementedException();
-        }
+        //public Etapa ConsultarEtapas(string p)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

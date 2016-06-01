@@ -1,1 +1,10 @@
 C:\Users\User\Documents\GitHub\Mestrado_bateria\Tabelas\obj\Debug\Tabelas.csprojResolveAssemblyReference.cache
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\bin\Debug\Tabelas.dll
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\bin\Debug\Tabelas.pdb
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\bin\Debug\AcessoBD.dll
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\bin\Debug\Transferencia.dll
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\bin\Debug\AcessoBD.pdb
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\bin\Debug\Transferencia.pdb
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\obj\Debug\Tabelas.csprojResolveAssemblyReference.cache
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\obj\Debug\Tabelas.dll
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Tabelas\obj\Debug\Tabelas.pdb

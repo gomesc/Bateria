@@ -1,0 +1,6 @@
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\AcessoBD\bin\Debug\AcessoBD.dll.config
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\AcessoBD\bin\Debug\AcessoBD.dll
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\AcessoBD\bin\Debug\AcessoBD.pdb
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\AcessoBD\obj\Debug\AcessoBD.csprojResolveAssemblyReference.cache
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\AcessoBD\obj\Debug\AcessoBD.dll
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\AcessoBD\obj\Debug\AcessoBD.pdb

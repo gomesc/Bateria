@@ -31,7 +31,6 @@ namespace Tabelas
 
                 acesso_dados.ExecultarManupulacao(CommandType.StoredProcedure, "inserirBateria").ToString();
 
-
                 return "";
             }
             catch (Exception exception)
@@ -49,7 +48,7 @@ namespace Tabelas
                 acesso_dados.LimparParametros();
                 acesso_dados.AdicionarParametros("@NomeBateria", nome);
 
-                DataTable dataTable = acesso_dados.ExecultarConsulta(CommandType.StoredProcedure, "consultarBateriasPorNome");
+                DataTable dataTable = acesso_dados.ExecultarConsulta(CommandType.StoredProcedure, "consultarBateriaPorNome");
 
                 //Percorrer o DataTable e transformar em coleção de cliente
                 //Cada linha do DataTable é um cliente

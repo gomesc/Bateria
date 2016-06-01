@@ -60,7 +60,9 @@ namespace Moura
         private void bt_bateria_Click(object sender, EventArgs e)
         {
             view(true, false, false, false, false, false, true, false, false);
-            colecao_modelo = colecao_modelo.ConsultarModelosBateriaPorNome("");
+            colecao_modelo = tabela_modelo.ConsultarModelosBateriaPorNome("");
+
+            
             foreach (ModeloBateria modelo in colecao_modelo)
             {
                 cB_modelo_bat.Items.Add(modelo.Modelo);
@@ -92,7 +94,7 @@ namespace Moura
                     bateria.Fabricacao = tB_fab_bat.Text;
 
                     ModeloBateriaColecao colecao_modelo = tabela_modelo.ConsultarModelosBateriaPorNome(cB_modelo_bat.Text);
-                    bateria.Id = tabela_modelo[0].Id;
+                    bateria.Id = colecao_modelo[0].Id;
 
                     tabela_bateria.InserirBateria(bateria);
 
@@ -145,7 +147,7 @@ namespace Moura
                 try
                 {
                     //Pegar cliente selecionado no grid
-                    Etapa etapa = tabela_etapa.ConsultarEtapas(cB_etapas_ensa.Text);
+                   // Etapa etapa = tabela_etapa.ConsultarEtapas();
 
                     ensaio.NomeEnsaio = tB_nome_ens.Text;
                     ensaio.Descricao = tB_desc_ensa.Text;

@@ -2,3 +2,8 @@ C:\Users\User\Documents\GitHub\Mestrado_bateria\Transferencia\bin\Debug\Transfer
 C:\Users\User\Documents\GitHub\Mestrado_bateria\Transferencia\bin\Debug\Transferencia.pdb
 C:\Users\User\Documents\GitHub\Mestrado_bateria\Transferencia\obj\Debug\Transferencia.dll
 C:\Users\User\Documents\GitHub\Mestrado_bateria\Transferencia\obj\Debug\Transferencia.pdb
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Transferencia\bin\Debug\Transferencia.dll
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Transferencia\bin\Debug\Transferencia.pdb
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Transferencia\obj\Debug\Transferencia.csprojResolveAssemblyReference.cache
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Transferencia\obj\Debug\Transferencia.dll
+C:\Users\Joel Adelaide\Desktop\Bateria-01\Bateria-01\Transferencia\obj\Debug\Transferencia.pdb

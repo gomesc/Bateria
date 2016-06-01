@@ -23,10 +23,10 @@ namespace Transferencia
     public class ModeloBateriaColecao : List<ModeloBateria>
     {
 
-        public ModeloBateriaColecao ConsultarModelosBateriaPorNome(string p)
-        {
-            throw new NotImplementedException();
-        }
+        //public ModeloBateriaColecao ConsultarModelosBateriaPorNome(string p)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
  
 }
